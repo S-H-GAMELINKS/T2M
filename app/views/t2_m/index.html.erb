@@ -4,5 +4,10 @@
 <% if !user_signed_in? %>
     <%= link_to "Log In for Mastodon Account", user_mastodon_omniauth_authorize_path %>
 <% else %>
-    <%= link_to "Import Tweet",  "" %>
+    <%= form_tag({controller: "t2_m", action: "import", method: "post"}, {multipart: true}) do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "呟きをインポート" %>
+    <% end %>
+
+    <%= link_to("ログアウト", destroy_user_session_path, method: :delete) %>
 <% end %>
