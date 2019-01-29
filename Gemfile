@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
-gem 'devise'
+gem 'devise', '~> 4.4.3'
 
 gem 'mastodon-api', require: 'mastodon'
 gem 'omniauth-mastodon'
